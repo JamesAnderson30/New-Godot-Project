@@ -37,11 +37,11 @@ script = ExtResource("1_ig7tw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_ig7tw")
 
-[node name="Camera3D" type="Camera3D" parent="Player/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800745, 1.24546, -7.82531)
@@ -57,7 +57,7 @@ mesh = SubResource("BoxMesh_0xm2m")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.0128527, -0.515484, -0.0301313)
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0.0128527, -0.10113, -0.0301313)
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
