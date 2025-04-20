@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77sbesl64mv3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
+font_size = 50
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HUD" type="CanvasGroup" parent="."]
+
+[node name="HP" type="Label" parent="HUD"]
+offset_left = 17.0
+offset_top = 543.0
+offset_right = 219.0
+offset_bottom = 612.0
+text = "HP: "
+label_settings = SubResource("LabelSettings_7dm0k")
