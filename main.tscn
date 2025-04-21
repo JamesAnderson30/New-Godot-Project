@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b77sbesl64mv3"]
+[gd_scene load_steps=8 format=3 uid="uid://b77sbesl64mv3"]
 
-[ext_resource type="Script" uid="uid://brassqnxltdd0" path="res://character_body_3d.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://85xt1gro5a1s" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dascvfin8ccl" path="res://main.gd" id="1_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
 font_size = 50
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ig7tw"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ig7tw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 
@@ -18,7 +15,8 @@ size = Vector3(1, 0.494141, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
+script = ExtResource("1_h2yge")
 
 [node name="HUD" type="CanvasGroup" parent="."]
 
@@ -30,18 +28,8 @@ offset_bottom = 612.0
 text = "HP: "
 label_settings = SubResource("LabelSettings_7dm0k")
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996567, 0)
-script = ExtResource("1_ig7tw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_ig7tw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_ig7tw")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800745, 1.24546, -7.82531)
