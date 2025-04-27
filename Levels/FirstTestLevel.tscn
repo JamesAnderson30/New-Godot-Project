@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8ih6gf5tlwl4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq10m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cgjeh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3if8"]
+albedo_color = Color(0.247021, 0.37779, 0.0541089, 1)
+
+[node name="FirstTestLevel" type="Node3D"]
+top_level = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_bq10m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+mesh = SubResource("BoxMesh_cgjeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_s3if8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.844253, 0.535945, 0, -0.535945, 0.844253, 0.256086, 2.26646, 1.43117)
+spot_range = 5.24194

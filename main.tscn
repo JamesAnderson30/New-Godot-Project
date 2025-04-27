@@ -1,19 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b77sbesl64mv3"]
+[gd_scene load_steps=3 format=3 uid="uid://b77sbesl64mv3"]
 
-[ext_resource type="PackedScene" uid="uid://85xt1gro5a1s" path="res://player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dascvfin8ccl" path="res://main.gd" id="1_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
 font_size = 50
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
-size = Vector3(1, 0.494141, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_h2yge")
@@ -27,26 +17,3 @@ offset_right = 219.0
 offset_bottom = 612.0
 text = "HP: "
 label_settings = SubResource("LabelSettings_7dm0k")
-
-[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996567, 0)
-
-[node name="Box" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800745, 1.24546, -7.82531)
-top_level = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1661, 0.174486, -0.403646)
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/CollisionShape3D"]
-mesh = SubResource("BoxMesh_0xm2m")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0.0128527, -0.10113, -0.0301313)
-shape = SubResource("BoxShape3D_ig7tw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
-mesh = SubResource("BoxMesh_ig7tw")

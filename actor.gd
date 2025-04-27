@@ -1,8 +1,5 @@
 extends Node
 
-func test(str):
-	print(str)
-
 var enemyList = {
 	"Test Foe": preload("res://Enemies/TestFoe.tscn")
 }

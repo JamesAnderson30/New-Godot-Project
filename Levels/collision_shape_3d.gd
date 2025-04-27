@@ -1,11 +1,11 @@
-extends Node3D
+extends CollisionShape3D
 
 
 # Called when the node enters the Handler tree for the first time.
 func _ready() -> void:
-	$MeshInstance3D.mesh.material.albedo_color = Color(0, 0, 1, 1)
+	global_transform = get_parent().global_transform
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
