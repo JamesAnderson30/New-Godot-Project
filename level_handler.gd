@@ -3,7 +3,9 @@ extends Node
 var currentLevelNumber = 0
 
 var level_list = [
+	# need to add main menu to level_list?
 	{
+		
 		"name": "First Test Level",
 		"Handler": preload("res://Levels/FirstTestLevel.tscn")
 	}
