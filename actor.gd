@@ -1,7 +1,7 @@
 extends Node
 
 var enemyList = {
-	"Test Foe": preload("res://Enemies/TestFoe.tscn")
+	"Test Foe": preload("res://Actors/Enemies/TestFoe.tscn")
 }
 
 func createEnemy(enemyName):

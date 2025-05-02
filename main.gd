@@ -1,9 +1,9 @@
 extends Node3D
 #Preload External Handlers that the main program needs to call on
 
-var ActorHandler = preload("res://Actor.tscn")
+var ActorHandler = preload("res://Actors/Actor.tscn")
 var LevelHandler = preload("res://LevelHandler.tscn")
-var PlayerHandler = preload("res://Player/PlayerHandler.tscn")
+var PlayerHandler = preload("res://Actors/Player/PlayerHandler.tscn")
 
 var actorHandler = ActorHandler.instantiate()
 var levelHandler = LevelHandler.instantiate()

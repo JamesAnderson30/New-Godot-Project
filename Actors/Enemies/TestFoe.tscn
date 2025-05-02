@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b72xvsxqkllcy"]
 
-[ext_resource type="Script" uid="uid://bv4dyeqp5rya6" path="res://Enemies/test_foe.gd" id="1_f0d5k"]
+[ext_resource type="Script" uid="uid://bv4dyeqp5rya6" path="res://Actors/Enemies/test_foe.gd" id="1_f0d5k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ypuxx"]
 
