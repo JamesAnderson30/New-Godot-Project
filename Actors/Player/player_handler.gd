@@ -1,6 +1,6 @@
 extends Node
 
-var playerScene = preload("res://Player/MainPlayer.tscn")
+var playerScene = preload("res://Actors/Player/MainPlayer.tscn")
 
 func loadPlayer():
 	return playerScene.instantiate()
