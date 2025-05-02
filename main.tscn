@@ -9,8 +9,10 @@ font_size = 50
 script = ExtResource("1_h2yge")
 
 [node name="HUD" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="HP" type="Label" parent="HUD"]
+visible = false
 offset_left = 17.0
 offset_top = 543.0
 offset_right = 219.0
