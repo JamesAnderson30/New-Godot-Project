@@ -7,7 +7,7 @@ var level_list = [
 	{
 		"id": "mainMenu",
 		"name": "Main Menu",
-		"scene": preload("res://Levels/MainMenu.tscn")
+		"scene": preload("res://Menus/MainMenu/MainMenu.tscn")
 	},
 	
 	{
