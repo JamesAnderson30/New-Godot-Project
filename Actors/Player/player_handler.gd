@@ -1,6 +1,6 @@
 extends Node
 
-var playerScene = preload("res://Actors/Player/MainPlayer.tscn")
+var playerScene = preload("res://Actors/Player/PlayerHandler.tscn")
 
 func loadPlayer():
 	return playerScene.instantiate()
@@ -11,5 +11,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
