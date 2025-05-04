@@ -1,6 +1,6 @@
 extends Node3D
 
-var EnemyHandler = preload("res://Actors/Enemies/TestFoe.tscn")
+var EnemyHandler = preload("res://Actors/Enemies/EnemyList/TestFoe.tscn")
 var enemyHandler = EnemyHandler.instantiate()
 var PlayerHandler = preload("res://Actors/Player/PlayerHandler.tscn")
 var playerHandler = PlayerHandler.instantiate()
@@ -18,16 +18,5 @@ func spawnThing(scene):
 
 func _ready():
 	pass
-	#print("Level ready - spawning things..")
-	
-	#for spawn in initialSpawn:
-		#var enemy = enemyHandler.createEnemy(spawn["id"])
-		#if enemy:
-			#enemy.position = spawn["position"]
-			#print(enemy)
-			#add_child(enemy)
-	##spawn player here..
-	#var player = playerHandler.loadPlayer()
-	#player.position = Vector3(0, 5, 0)
-	#add_child(player)
+
 	

@@ -1,7 +1,7 @@
 extends Node
 
 var enemyList = {
-	"Test Foe": preload("res://Actors/Enemies/TestFoe.tscn")
+	"Test Foe": preload("res://Actors/Enemies/EnemyList/TestFoe.tscn")
 }
 
 #x, y, z_position in this function catches if the position is provided, and if not sets it to 0

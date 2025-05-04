@@ -1,14 +1,8 @@
 extends Node3D
-#Preload External Handlers that the main program needs to call on
-
-#var ActorHandler = preload("res://Actors/Actor.tscn")
-var LevelHandler = preload("res://Levels/LevelHandler.tscn")
-#var PlayerHandler = preload("res://Actors/Player/PlayerHandler.tscn")
 signal start_level_one
-
-#var actorHandler = ActorHandler.instantiate()
+#Preload External Handlers that the main program needs to call on
+var LevelHandler = preload("res://Levels/LevelHandler.tscn")
 var levelHandler = LevelHandler.instantiate()
-#var playerHandler = PlayerHandler.instantiate()
 
 func _ready():
 	var menuStart = levelHandler.loadLevel("mainMenu")

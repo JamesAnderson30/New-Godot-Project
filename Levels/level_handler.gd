@@ -1,5 +1,5 @@
 extends Node
-var EnemyHandler = preload("res://Actors/Enemies/TestFoe.tscn")
+var EnemyHandler = preload("res://Actors/Enemies/EnemyHandler.tscn")
 var enemyHandler = EnemyHandler.instantiate()
 var PlayerHandler = preload("res://Actors/Player/PlayerHandler.tscn")
 var playerHandler = PlayerHandler.instantiate()
