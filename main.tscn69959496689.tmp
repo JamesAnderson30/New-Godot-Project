@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b77sbesl64mv3"]
+
+[ext_resource type="Script" uid="uid://dascvfin8ccl" path="res://main.gd" id="1_h2yge"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
+font_size = 50
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_h2yge")
+
+[node name="HUD" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="HP" type="Label" parent="HUD"]
+visible = false
+offset_left = 17.0
+offset_top = 543.0
+offset_right = 219.0
+offset_bottom = 612.0
+text = "HP: "
+label_settings = SubResource("LabelSettings_7dm0k")
