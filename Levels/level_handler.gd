@@ -1,5 +1,8 @@
 extends Node
-
+var EnemyHandler = preload("res://Actors/Enemies/TestFoe.tscn")
+var enemyHandler = EnemyHandler.instantiate()
+var PlayerHandler = preload("res://Actors/Player/PlayerHandler.tscn")
+var playerHandler = PlayerHandler.instantiate()
 
 # Called when the node enters the Handler tree for the first time.
 func _ready():
@@ -7,20 +10,17 @@ func _ready():
 	
 #var currentLevelNumber = 0
 
-var level_list = [
+var level_list = {
 	# adding main menu to list, and defining "id" to use.
-	{
-		"id": "mainMenu",
+	"mainMenu" : {
 		"name": "Main Menu",
 		"scene": preload("res://Menus/MainMenu/MainMenu.tscn")
 	},
-	
-	{
-		"id": "firstLevel",
+	"firstLevel" : {
 		"name": "First Test Level",
 		"scene": preload("res://Levels/FirstTestLevel.tscn")
 	}
-]
+}
 
 # this function will need to be updated?
 #func loadLevelByNumber(levelNum):
@@ -34,12 +34,29 @@ func firstStart():
 	
 
 func loadLevel(level_id):
-	print(level_list.size(), " Load Level received call..")
-	# prints 2 as of writing, correct.
-	for level in level_list:
-		if level["id"] == level_id:
-			var scene = level["scene"].instantiate()
-			return scene
+	print("Loading Level...")
+	# LOAD LEVEL SCENE
+	var levelScene = level_list[level_id]["scene"].instantiate()
+	
+	print("Level Loaded: ", levelScene)
+	print("Spawning Things...")
+	
+	if("spawnThing" in levelScene):
+		for spawn in levelScene.initialSpawn:
+			var enemy = enemyHandler.createEnemy(spawn["id"])
+			if enemy:
+				enemy.position = spawn["position"]
+				print(enemy)
+				levelScene.spawnThing(enemy)
+
+	#spawn player here..
+	print("Spawning Player...")
+	if("spawnThing" in levelScene):
+		var player = playerHandler.loadPlayer()
+		player.position = Vector3(0, 5, 0)
+		levelScene.spawnThing(player)
+	
+	return levelScene
 	push_error("loadLevel ERROR: Level ID not found in level_list", % level_id)
 	#return "Cannot generate"
 
