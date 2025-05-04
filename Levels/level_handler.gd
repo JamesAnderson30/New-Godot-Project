@@ -41,7 +41,7 @@ func loadLevel(level_id):
 			var scene = level["scene"].instantiate()
 			return scene
 	push_error("loadLevel ERROR: Level ID not found in level_list", % level_id)
-	return "Cannot generate"
+	#return "Cannot generate"
 
 
 

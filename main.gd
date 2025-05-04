@@ -23,7 +23,8 @@ func _on_main_menu_start_game():
 	print("Start recieved..")
 	for child in get_children():
 		child.queue_free()
-	emit_signal("start_level_one")
+	print(levelHandler.loadLevel("firstLevel"))
+	add_child(levelHandler.loadLevel("firstLevel"))
 	
 	# this bit clears up the main menu so it doesn't display over the loaded level..
 	
