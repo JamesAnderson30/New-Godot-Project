@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8e78i5qgbm3"]
+
+[ext_resource type="PackedScene" uid="uid://wrf181y7xf4t" path="res://Actors/Player/FirstTest.glb" id="1_lbelw"]
+
+[node name="FirstTest" instance=ExtResource("1_lbelw")]
