@@ -29,32 +29,33 @@ var level_list = {
 		#return newLevel
 
 func firstStart():
-	print("Level Handler recieved signal")
+	#print("Level Handler recieved signal")
 	loadLevel("firstLevel")
 	
 
 func loadLevel(level_id):
-	print("Loading Level...")
+	#print("Loading Level...")
 	# LOAD LEVEL SCENE
 	var levelScene = level_list[level_id]["scene"].instantiate()
 	
-	print("Level Loaded: ", levelScene)
-	print("Spawning Things...")
+	#print("Level Loaded: ", levelScene)
+	#print("Spawning Things...")
+		#spawn player here..
+	#print("Spawning Player...")
+	if("spawnThing" in levelScene):
+		var player = playerHandler.loadPlayer()
+		player.position = Vector3(0, 5, 0)
+		levelScene.spawnThing(player)
+	
 	
 	if("spawnThing" in levelScene):
 		for spawn in levelScene.initialSpawn:
 			var enemy = enemyHandler.createEnemy(spawn["id"])
 			if enemy:
 				enemy.position = spawn["position"]
-				print(enemy)
+				#print(enemy)
 				levelScene.spawnThing(enemy)
 
-	#spawn player here..
-	print("Spawning Player...")
-	if("spawnThing" in levelScene):
-		var player = playerHandler.loadPlayer()
-		player.position = Vector3(0, 5, 0)
-		levelScene.spawnThing(player)
 	
 	return levelScene
 	push_error("loadLevel ERROR: Level ID not found in level_list", % level_id)

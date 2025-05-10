@@ -1,16 +1,11 @@
-extends CharacterBody3D
-class_name EnemyHandler
+extends Node
 
-var navTarget = null
-var hp = 100
-var gravity = 9.8
+var stateName = "chase_target"
 
-
-func setNavigationTarget(newTarget: Node):
-	navTarget = newTarget
+func enter():
+	print("Entered ", stateName, " state")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-#	We need to set velocity to zero
 	pass # Replace with function body.
 
 
