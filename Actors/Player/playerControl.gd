@@ -1,13 +1,15 @@
 extends CharacterBody3D
 
-
-
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
 
+var idName = "Player"
+var characterType = "Protagonist"
+
 func _ready():
+	ActorHandler.registerActor(self)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
@@ -23,6 +25,11 @@ func _physics_process(delta):
 		velocity.y = jump_speed
 
 func _input(event):
+	if event.is_action_pressed("debugAction"):
+		#print("Printing Actors...")
+		for actor in ActorHandler.actors:
+			#print(actor)
+			pass
 	if event.is_action_pressed("ui_cancel") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if event.is_action_pressed("ui_accept") and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:

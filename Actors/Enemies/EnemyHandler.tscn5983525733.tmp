@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://doiyg0ae1scup"]
+[gd_scene load_steps=2 format=3 uid="uid://ckbf3n53tg4ro"]
 
 [sub_resource type="GDScript" id="GDScript_4icxp"]
 script/source = "extends Node
 
 var enemyList = {
-	\"Test Foe\": preload(\"res://Actors/Enemies/EnemyList/TestFoe/TestFoe.tscn\")
+	\"Test Foe\": preload(\"res://Actors/Enemies/EnemyList/TestFoe.tscn\")
 }
 
 #x, y, z_position in this function catches if the position is provided, and if not sets it to 0
@@ -15,5 +15,5 @@ func createEnemy(enemyName, x_position = 0, y_position = 0, z_position = 0):
 		return newEnemy
 "
 
-[node name="Actor" type="Node"]
+[node name="EnemyHandler" type="Node"]
 script = SubResource("GDScript_4icxp")

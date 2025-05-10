@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8ih6gf5tlwl4"]
+[gd_scene load_steps=7 format=3 uid="uid://b8ih6gf5tlwl4"]
 
 [ext_resource type="Script" uid="uid://c3ubjvgkuc67d" path="res://Levels/first_test_level.gd" id="1_cgjeh"]
-[ext_resource type="Script" uid="uid://c4rdkjxo10rer" path="res://Levels/rigid_body_3d.gd" id="2_s3if8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bq10m"]
 
@@ -15,10 +14,6 @@ vertices = PackedVector3Array(-10.99, 0.5, -10.99, -10.99, 0.5, 11.01, 11.01, 0.
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s3if8"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cgjeh"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_s3if8"]
 
 [node name="FirstTestLevel" type="Node3D"]
 top_level = true
@@ -45,13 +40,3 @@ mesh = SubResource("PlaneMesh_s3if8")
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.844253, 0.535945, 0, -0.535945, 0.844253, 0.256086, 2.26646, 1.43117)
 spot_range = 5.24194
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.56141, 0.931098, 6.04807)
-script = ExtResource("2_s3if8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_cgjeh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_s3if8")
