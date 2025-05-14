@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl3pnli04f3qb"]
+[gd_scene load_steps=3 format=3 uid="uid://dl3pnli04f3qb"]
 
-[ext_resource type="PackedScene" uid="uid://85xt1gro5a1s" path="res://Actors/Player/player.tscn" id="1_qblfi"]
+[ext_resource type="PackedScene" uid="uid://dbu7ojgflhho4" path="res://Actors/Player/new_player.blend" id="2_bs8nh"]
+[ext_resource type="Script" uid="uid://b4yufr1hcevqr" path="res://Actors/Player/new_player.gd" id="3_wpvv7"]
 
 [node name="MainPlayer" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_qblfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996567, 0)
+[node name="new_player" parent="." instance=ExtResource("2_bs8nh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0346372, -0.0340254, -0.0341845)
+script = ExtResource("3_wpvv7")
+
+[node name="Camera3D" type="Camera3D" parent="new_player"]
+transform = Transform3D(-0.999004, 0, 0.0446132, 0, 1, 0, -0.0446132, 0, -0.999004, 0, 1.99334, -3.27003)
+fov = 54.5492
+
+[editable path="new_player"]
